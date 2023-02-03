@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Celebrity {
     
-    int age;
+    String age;
     int height;
 
     String profession;
@@ -18,7 +18,7 @@ public class Celebrity {
         
     }
 
-    Celebrity(String name, int age, int height, String profession, String hairColor, boolean isMale, boolean alive, String race){
+    Celebrity(String name, String age, int height, String profession, String hairColor, boolean isMale, boolean alive, String race){
         this.age = age;
         this.height = height;
         this.profession = profession;
@@ -30,7 +30,7 @@ public class Celebrity {
 
     }
 
-    public int getAge(){
+    public String getAge(){
         return age;
     }
     
