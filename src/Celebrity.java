@@ -3,13 +3,13 @@ import java.util.ArrayList;
 public class Celebrity {
     
     String age;
-    int height;
+    String height;
 
     String profession;
     String hairColor;
 
-    boolean isMale;
-    boolean alive;
+    String gender;
+    String alive;
     String race;
     String name;
 
@@ -18,12 +18,12 @@ public class Celebrity {
         
     }
 
-    Celebrity(String name, String age, int height, String profession, String hairColor, boolean isMale, boolean alive, String race){
+    Celebrity(String name, String age, String height, String profession, String hairColor, String gender, String alive, String race){
         this.age = age;
         this.height = height;
         this.profession = profession;
         this.hairColor = hairColor;
-        this.isMale = isMale;
+        this.gender = gender;
         this.alive = alive;
         this.race = race;
         this.name = name;
@@ -34,7 +34,7 @@ public class Celebrity {
         return age;
     }
     
-    public int getHeight(){
+    public String getHeight(){
         return height;
     }
 
@@ -46,11 +46,11 @@ public class Celebrity {
         return hairColor;
     }
 
-    public boolean getGender(){
-        return isMale;
+    public String getGender(){
+        return gender;
     }
 
-    public boolean getAlive(){
+    public String getAlive(){
         return alive;
     }
 

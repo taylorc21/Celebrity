@@ -1,0 +1,53 @@
+int guessedAge = 0;
+            
+            if (traitGuess(input).equals("age")){
+
+                int celebAge = Integer.parseInt(randomCeleb.getAge());
+
+                    for (int i = 0; i < input.length(); i++){
+                        if (input.substring(i, i+1).equals("1") || input.substring(i, i+1).equals("2")||input.substring(i, i+1).equals("3")||input.substring(i, i+1).equals("4")||input.substring(i, i+1).equals("5")||input.substring(i, i+1).equals("6")||input.substring(i, i+1).equals("7")||input.substring(i, i+1).equals("8")||input.substring(i, i+1).equals("9")||input.substring(i, i+1).equals("0")){
+                            guessedAge = Integer.parseInt(input.substring(i, i+2));
+                            break;
+                        }
+
+                    }
+
+                    if(input.contains("younger")){
+                        if (celebAge < guessedAge)
+                            System.out.println("Yes! This celebrity is younger than " + guessedAge);
+                        else{
+                            System.out.println("No, this celebrity is not younger than " + guessedAge);
+                        }
+                    }
+
+                    else if (input.contains("older")){
+                        if (celebAge > guessedAge){
+                            System.out.println("Yes! This celebrity is older than " + guessedAge);
+                        }
+                        else{
+                            System.out.println("No, this celebrity is not older than " + guessedAge);
+                        } 
+                    }
+
+                    else if (input.contains("exactly") || input.contains("exact") && input.contains("years old")){
+                        if (celebAge == guessedAge){
+                            System.out.println("Yes! This celebrity is " + guessedAge + " years old");
+                        }
+                        else{
+                            System.out.println("No, this celebrity is not " + guessedAge + "years old");
+                        }
+                        
+                    }
+                }
+
+            else if(celebGuess(input) == true){
+                    if(input.contains(randomCeleb.getName())){
+                        System.out.println("Yes! " + randomCeleb.getName() + " is the celebrity!");
+                    }
+
+                    else{
+                        System.out.println("No, that is not the celebrity");
+
+                    }
+                    guessCount++;
+            }
