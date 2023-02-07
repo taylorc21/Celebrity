@@ -9,7 +9,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         addCelebrity(Celebrities);
 
-        int random = 9;  //(int)(Math.random() * 10);
+        int random = (int)(Math.random() * 10);
         Celebrity randomCeleb = Celebrities.get(random);
         int guessCount = 0;
 
@@ -26,6 +26,11 @@ public class App {
                 System.out.println("Be careful, this is your last guess!");
             }
             guessCount++;
+
+            if (guessCount > 20){
+                break;
+
+            }
         }
 
         if (guessCount == 15){
@@ -48,7 +53,7 @@ public class App {
             return "height";
         }
 
-        else if (input.contains("profession") || input.contains("job") || input.contains("actor") || input.contains("athlete") || input.contains("politicain") || input.contains("songwriter") || input.contains("artist") || input.contains("musician")){
+        else if (input.contains("profession") || input.contains("job") || input.contains("actor") || input.contains("athlete") || input.contains("politician") || input.contains("artist") || input.contains("comedian") || input.contains("musician")){
 
             return "profession";
         }
@@ -94,6 +99,7 @@ public class App {
         if (celebGuess(input) == true){
             if (input.contains(randomCeleb.getName())){
                 System.out.println("Yes! " + randomCeleb.getName() + " is the mystery celebrity!");
+                guessCount += 25;
             }
 
             else{
@@ -268,9 +274,7 @@ public class App {
     public static void rules(){
         System.out.println("");
         System.out.println("");
-        System.out.println("");
         System.out.println("Guessable Traits: age, height, profession, hairColor, gender, alive, and race");
-        
     }
 
 
@@ -285,7 +289,7 @@ public class App {
         Celebrities.add(OBJ);
         Celebrity KevinHart = new Celebrity("Kevin Hart", "43", "62", "comedian", "black", "male", "alive", "black");
         Celebrities.add(KevinHart);
-        Celebrity ZachBryan = new Celebrity("Zach Bryan", "26", "70", "singer", "blonde", "male", "alive", "white");
+        Celebrity ZachBryan = new Celebrity("Zach Bryan", "26", "70", "musician", "blonde", "male", "alive", "white");
         Celebrities.add(ZachBryan);
         Celebrity LeonardFournette = new Celebrity("Leonard Fournett", "28", "70", "athlete", "null", "male", "alive", "black");
         Celebrities.add(LeonardFournette);
@@ -295,7 +299,7 @@ public class App {
         Celebrities.add(JoeBiden);
         Celebrity HillaryClinton = new Celebrity("Hillary Clinton", "75", "65", "politician", "white", "female", "alive", "white");
         Celebrities.add(HillaryClinton);
-        Celebrity DariusRucker = new Celebrity("Darius Rucker", "56", "70", "singer", "black", "male", "alive", "black");
+        Celebrity DariusRucker = new Celebrity("Darius Rucker", "56", "70", "musician", "black", "male", "alive", "black");
         Celebrities.add(DariusRucker);
         Celebrity BarackObama = new Celebrity("Barack Obama", "61", "74", "politician", "black", "male", "alive", "black");
         Celebrities.add(BarackObama);
